@@ -18,11 +18,11 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // Output data dari satu baris terbaru
     $row = mysqli_fetch_assoc($result);
-    echo "Data1: " . $row["data1"] . "<br>";
-    echo "Data2: " . $row["data2"] . "<br>";
-    echo "Data3: " . $row["data3"] . "<br>";
-    echo "Data4: " . $row["data4"] . "<br>";
-    echo "Data5: " . $row["data5"];
+    echo "Suhu Badan: " . $row["data1"] . "<br>";
+    echo "Tinggi Badan: " . $row["data2"] . "<br>";
+    echo "Tekanan Darah: " . $row["data3"] . "/120" . "<br>";
+    echo "Denyut Jantung: " . $row["data4"] . "<br>";
+    echo "Berat Badan: " . $row["data5"];
 } else {
     echo "No data available";
 }
