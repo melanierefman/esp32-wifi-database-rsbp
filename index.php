@@ -63,13 +63,13 @@
                     <p>00</p>
                 </div>
                 <!-- Card 6 -->
-                <div class="flex-col items-center bg-white rounded-lg shadow-md m-6 overflow-hidden sm:w-52" style="margin-right: 20px; padding:10px;">
+                <div id="gulaDarahCard" class="flex-col items-center bg-white rounded-lg shadow-md m-6 overflow-hidden sm:w-52" style="margin-right: 20px; padding:10px;">
                     <img src=" ./png/gula_darah.png" alt="gula_darah" class="max-w-full h-20 m-6 mx-8" style="margin-right: 10px;">
                     <h2 class="font-bold">Kadar Gula Darah</h2>
                     <p>00</p>
                 </div>
                 <!-- Card 7 -->
-                <div class="flex-col items-center bg-white rounded-lg shadow-md m-6 overflow-hidden sm:w-52" style="padding:10px;">
+                <div id="kolesterolCard" class="flex-col items-center bg-white rounded-lg shadow-md m-6 overflow-hidden sm:w-52" style="padding:10px;">
                     <img src=" ./png/kolesterol.png" alt="kolesterol" class="max-w-full h-20 m-6 mx-8" style="margin-right: 10px;">
                     <h2 class="font-bold">Kolesterol</h2>
                     <p>00</p>
@@ -99,6 +99,8 @@
                     var tekananDarahCard = document.getElementById("tekananDarahCard");
                     var denyutJantungCard = document.getElementById("denyutJantungCard");
                     var beratBadanCard = document.getElementById("beratBadanCard");
+                    var gulaDarahCard = document.getElementById("gulaDarahCard");
+                    var kolesterolCard = document.getElementById("kolesterolCard");
 
                     // Ubah isi elemen card sesuai dengan data yang diterima
                     suhuCard.querySelector("p").textContent = data['Suhu Badan'];
@@ -106,6 +108,8 @@
                     tekananDarahCard.querySelector("p").textContent = data['Tekanan Darah'];
                     denyutJantungCard.querySelector("p").textContent = data['Denyut Jantung'];
                     beratBadanCard.querySelector("p").textContent = data['Berat Badan'];
+                    gulaDarahCard.querySelector("p").textContent = data['Kadar Gula Darah'];
+                    kolesterolCard.querySelector("p").textContent = data['Kolesterol'];
                 } else {
                     // Tangkap dan tampilkan pesan kesalahan jika terjadi
                     document.getElementById("dataContainer").innerHTML = "Error: " + xhr.statusText;
