@@ -18,13 +18,24 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // Output data dari satu baris terbaru
     $row = mysqli_fetch_assoc($result);
-    echo "Suhu Badan: " . $row["data1"] . "<br>";
-    echo "Tinggi Badan: " . $row["data2"] . "<br>";
-    echo "Tekanan Darah: " . $row["data3"] . "/120" . "<br>";
-    echo "Denyut Jantung: " . $row["data4"] . "<br>";
-    echo "Berat Badan: " . $row["data5"];
+
+    // Format data sebagai array asosiatif
+    $data = array(
+        'Suhu Badan' => $row["data1"],
+        'Tinggi Badan' => $row["data2"],
+        'Tekanan Darah' => $row["data3"] . "/120",
+        'Denyut Jantung' => $row["data4"],
+        'Berat Badan' => $row["data5"]
+    );
+
+    // Mengubah data menjadi format JSON
+    $json_data = json_encode($data);
+
+    // Menampilkan data JSON
+    echo $json_data;
 } else {
-    echo "No data available";
+    // Menampilkan pesan jika tidak ada data
+    echo json_encode(array('error' => 'No data available'));
 }
 
 mysqli_close($conn);
