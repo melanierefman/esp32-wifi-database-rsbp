@@ -1,7 +1,7 @@
 #include <WiFi.h> 
 #include <HTTPClient.h> 
 
-String URL = "http:// 192.168.144.63/esp32/database.php";
+String URL = "http://192.168.144.63/esp32/database.php";
 
 const char* ssid = "Melanie's Galaxy A52"; 
 const char* password = "a12345678";
@@ -21,16 +21,16 @@ void loop() {
   int data3 = random(120, 130);
   int data4 = random(60, 100);
   int data5 = random(40, 70);
-  int data6 = random(0, 200); // Contoh data6
-  int data7 = random(170, 250); // Contoh data7
+  int data6 = random(0, 200);
+  int data7 = random(170, 250);
 
   String postData = "data1=" + String(data1) +
                     "&data2=" + String(data2) +
                     "&data3=" + String(data3) +
                     "&data4=" + String(data4) +
                     "&data5=" + String(data5) +
-                    "&data6=" + String(data6) + // Menambahkan data6
-                    "&data7=" + String(data7); // Menambahkan data7
+                    "&data6=" + String(data6) + 
+                    "&data7=" + String(data7);
 
   HTTPClient http; 
   http.begin(URL);
